@@ -1,3 +1,8 @@
+export type GetCertificateRequest = {
+  /** Internal certificate ID, also referred to as certificate hash. */
+  id: string;
+};
+
 export type GetCertificateResponse = {
   /** Returns the internal certificate ID, also referred to as certificate hash. */
   id: string;

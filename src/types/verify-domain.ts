@@ -1,3 +1,12 @@
+export type VerifyDomainRequest = {
+  /** Internal certificate ID, also referred to as certificate hash. */
+  id: string;
+  /** Use this parameter to specify the verification method to use for this certificate. Possible values: `EMAIL` (email verification), `CNAME_CSR_HASH` (CNAME verification), `HTTP_CSR_HASH` (HTTP file upload), `HTTPS_CSR_HASH` (HTTPS file upload). */
+  method: 'EMAIL' | 'CNAME_CSR_HASH' | 'HTTP_CSR_HASH' | 'HTTPS_CSR_HASH';
+  /** If your selected verification method is email verification, use this parameter to specify one or multiple comma-seperated verification email addresses. You need to specify one verification email address per domain. */
+  validation_email?: string;
+}
+
 export type VerifyDomainsSuccessResponse = {
   /** `true` if the domain verification was successfully initiated or completed. */
   success: true;

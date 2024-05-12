@@ -1,3 +1,8 @@
+export type VerificationStatusRequest = {
+  /** Internal certificate ID, also referred to as certificate hash. */
+  id: string;
+};
+
 export type VerificationStatusResponse = {
   /** Indicates whether domain verification has been completed (`1`) or not (`0`). */
   validation_completed: 1 | 0;
