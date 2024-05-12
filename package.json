@@ -1,0 +1,32 @@
+{
+  "name": "zerossl-client",
+  "version": "0.0.1",
+  "description": "Unofficial Node client for Zero SSL",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/esm/index.d.ts",
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrisllontop/zero-ssl.git"
+  },
+  "keywords": [
+    "zero",
+    "ssl",
+    "http",
+    "client"
+  ],
+  "author": "Christian Llontop <chrisllontop@icloud.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chrisllontop/zero-ssl/issues"
+  },
+  "homepage": "https://github.com/chrisllontop/zero-ssl#readme",
+  "devDependencies": {
+    "typescript": "^5.4.5"
+  }
+}
