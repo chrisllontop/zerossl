@@ -13,7 +13,7 @@ import {
 import {CancelCertificateRequest, CancelCertificateResponse} from "./types/cancel-certificate";
 
 export class ZeroSSL {
-  private apiKey: string;
+  private readonly apiKey: string;
   private client = axios.create({
     baseURL: 'https://api.zerossl.com',
     headers: {
