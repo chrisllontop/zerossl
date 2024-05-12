@@ -1,5 +1,6 @@
 import axios from 'axios';
 import {
+  CancelCertificateRequest, CancelCertificateResponse,
   CreateCertificateRequest,
   CreateCertificateResponse,
   DownloadCertificateInlineRequest, DownloadCertificateInlineResponse,
@@ -7,10 +8,9 @@ import {
   ListCertificatesRequest,
   ListCertificatesResponse,
   ResendVerificationRequest, ResendVerificationResponse,
-  RevokeCertificateRequest, RevokeCertificateResponse,
+  RevokeCertificateRequest, RevokeCertificateResponse, ValidateCsrRequest, ValidateCsrResponse,
   VerificationStatusRequest, VerificationStatusResponse, VerifyDomainRequest, VerifyDomainResponse
 } from "./types";
-import {CancelCertificateRequest, CancelCertificateResponse} from "./types/cancel-certificate";
 
 export class ZeroSSL {
   private readonly apiKey: string;
@@ -100,6 +100,14 @@ export class ZeroSSL {
 
   async cancelCertificate(request: CancelCertificateRequest): Promise<CancelCertificateResponse> {
     const response = await this.client.post(`/certificates/${request.id}/cancel`, {
+      access_key: this.apiKey,
+    });
+    return response.data;
+  }
+
+  async validateCsr(request: ValidateCsrRequest): Promise<ValidateCsrResponse> {
+    const response = await this.client.post(`/validation/csr`, {
+      ...request,
       access_key: this.apiKey,
     });
     return response.data;
