@@ -1,7 +1,8 @@
 # ZeroSSL Client
 Unofficial Node.js client for the [ZeroSSL API](https://zerossl.com/documentation/api/)
 
-[![npm version](https://badge.fury.io/js/zerossl-client.svg)](https://badge.fury.io/js/zerossl-client)
+![NPM Version](https://img.shields.io/npm/v/zerossl-client)
+![npm bundle size](https://img.shields.io/bundlephobia/min/zerossl-client)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Features
@@ -14,7 +15,7 @@ Unofficial Node.js client for the [ZeroSSL API](https://zerossl.com/documentatio
 
 ```bash
 npm install zerossl-client
-yarn install zerossl-client
+yarn add zerossl-client
 pnpm install zerossl-client
 ```
 
