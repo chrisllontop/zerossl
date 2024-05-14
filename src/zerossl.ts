@@ -1,3 +1,4 @@
+import {pki} from 'node-forge';
 import axios from 'axios';
 import {
 	type CancelCertificateRequest,
@@ -5,7 +6,7 @@ import {
 	type CreateCertificateRequest,
 	type CreateCertificateResponse,
 	type DownloadCertificateInlineRequest,
-	type DownloadCertificateInlineResponse,
+	type DownloadCertificateInlineResponse, type GenerateCsrRequest,
 	type GetCertificateRequest,
 	type GetCertificateResponse,
 	type ListCertificatesRequest,
@@ -120,5 +121,21 @@ export class ZeroSSL {
 			access_key: this.apiKey,
 		});
 		return response.data;
+	}
+
+	async generateCsr(request: GenerateCsrRequest): Promise<string> {
+		const {bits = 2048, ...subject} = request;
+		const keys = pki.rsa.generateKeyPair(bits);
+		const csr = pki.createCertificationRequest();
+		csr.publicKey = keys.publicKey;
+
+		csr.setSubject(Object.entries(subject).map(([name, value]) => ({
+			name: name.replaceAll(/_\w/g, m => m[1].toUpperCase()),
+			value,
+		})));
+
+		csr.sign(keys.privateKey);
+
+		return pki.certificationRequestToPem(csr);
 	}
 }

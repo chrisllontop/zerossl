@@ -312,3 +312,22 @@ export type VerifyDomainResponse =
   | VerifyDomainsSuccessResponse
   | VerifyDomainsCnameErrorResponse
   | VerifyDomainsHttpErrorResponse;
+
+export type GenerateCsrRequest = {
+	/** The number of bits to use for the key. */
+	bits?: 2048 | 4096;
+	/** The common name for the certificate. */
+	common_name: string;
+	/** The country code for the certificate. */
+	country: string;
+	/** The state for the certificate. */
+	state: string;
+	/** The locality for the certificate. */
+	locality: string;
+	/** The organization for the certificate. */
+	organization: string;
+	/** The organization unit for the certificate. */
+	organization_unit: string;
+	/** The email for the certificate. */
+	email: string;
+};
