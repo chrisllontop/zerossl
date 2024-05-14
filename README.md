@@ -27,10 +27,21 @@ To use the Zero SSL Client, you need to instantiate it with your ZeroSSL API tok
 import {ZeroSSL} from 'zerossl-client';
 const client = new ZeroSSL('your-api-token');
 
-// Example usage: Creating a new SSL certificate
+// Generating a new CSR
+const csr = await client.generateCsr({
+  common_name: "example.com",
+  organization: "Example Inc",
+  organizational_unit: "IT",
+  locality: "San Francisco",
+  state: "California",
+  country: "US",
+  email: "jhon.doe@example.com",
+});
+
+// Creating a new SSL certificate
 await client.createCertificate({ 
   certificate_domains: "example.com",
-  certificate_csr: "<your-csr>",
+  certificate_csr: csr,
 });
 ```
 
