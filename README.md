@@ -29,10 +29,8 @@ const client = new ZeroSSL('your-api-token');
 
 // Example usage: Creating a new SSL certificate
 await client.createCertificate({ 
-  domains: ["example.com"],
-  validity_days: 90,
-  csr: "<your-csr>",
-  acme_method: "HTTP_CSR_HASH"
+  certificate_domains: "example.com",
+  certificate_csr: "<your-csr>",
 });
 ```
 
