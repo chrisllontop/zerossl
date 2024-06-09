@@ -2,7 +2,8 @@
 Unofficial Node.js client for the [ZeroSSL API](https://zerossl.com/documentation/api/)
 
 ![NPM Version](https://img.shields.io/npm/v/zerossl-client)
-![npm bundle size](https://img.shields.io/bundlephobia/min/zerossl-client)
+![GitHub Repo stars](https://img.shields.io/github/stars/chrisllontop/zerossl)
+![NPM Downloads](https://img.shields.io/npm/dm/zerossl-client)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Features
